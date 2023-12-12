@@ -1,0 +1,37 @@
+@charset "UTF-8";
+body {
+	font-family: '굴림체';
+	margin : 0 auto;
+	max-width : 800px;
+	font-size : 14px;
+	font-family: 'Noto Sans KR', sans-serif;
+	line-height : 20px;
+}
+* {
+	color : #222222;
+	text-decoration: none;
+}
+table { 
+	width : 100%;
+}
+tr.header {
+	background-color: gray;
+}
+tr.record {
+	background-color: #ffffff;
+}
+.gnb {
+	position : relative;
+}
+.gnb:hover > .lnb {
+	display : unset;
+}
+.lnb { 	
+	display : none;  position:absolute; top : 0; left : 0; background-color: #ffffff; 
+	}
+.lnb {
+	cursor : pointer;
+}
+
+
+
