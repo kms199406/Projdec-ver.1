@@ -17,17 +17,15 @@
 	<%@ include file="menu_header.jsp" %>
 </nav>
 <section>
-<%
-	String result = request.getParameter("R");
-	if(result.equals("0")){
-%>
+<%	String result = request.getParameter("R");
+	if(result.equals("0")){ %>
 <script type="text/javascript">
-	alert("수정이 되지 않았습니다.");
+	alert("제품이 삭제되지 않았습니다.");
 	location.href="PhonListServlet";
 </script>
 <%	} else { %>
 <script type="text/javascript">
-	alert("수정되었습니다.");
+	alert("제품이 삭제되었습니다.");
 	location.href="PhonListServlet";
 </script>
 <%	} %>
@@ -35,11 +33,3 @@
 </div>
 </body>
 </html>
-
-
-
-
-
-
-
-

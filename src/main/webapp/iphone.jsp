@@ -33,7 +33,7 @@
 		<td><%= item.getProduct_name() %></td>
 		<td><%= item.getBun()%></td>
 		<td><a href="ListupServlet?ID=<%= item.getId() %>">수정</a></td>
-		<td><a href="ListDelete.do?ID=<%= item.getId() %>">삭제</a></td></tr>
+		<td><a href="listDeleteDo.do?ID=<%= item.getId() %>">삭제</a></td></tr>
 		
 <%	} %>
 	</table><br/>

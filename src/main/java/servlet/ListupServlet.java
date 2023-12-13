@@ -52,8 +52,10 @@ public class ListupServlet extends HttpServlet {
 				c.setId(rs.getInt(1));
 				c.setCategory(rs.getString(2));
 				c.setProduct_name(rs.getString(3));
-				c.setBun(rs.getString(4));
+				c.setDescription(rs.getString(4));
 				c.setPicturl_url(rs.getString(5));
+				c.setPrice(rs.getString(6));
+				c.setBun(rs.getString(7));
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -70,42 +72,4 @@ public class ListupServlet extends HttpServlet {
 		rd.forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id = request.getParameter("ID");
-		String select = "ID,CETGORY,PRODUCT_NAME,DESCRIPTION,PICTURL_URL,PRICE,BUN from phones where id=?";
-		Connection con=null; PreparedStatement pstmt=null;
-		ResultSet rs = null;
-		ArrayList<PHON> phon = new ArrayList<PHON>();
-		try {
-			Class.forName("oracle.jdbc.OracleDriver");
-			con = DriverManager.getConnection(
-				"jdbc:oracle:thin:@//localhost:1521/xe","hr","hr");
-			pstmt = con.prepareStatement(select);
-			pstmt.setString(1, id);
-			rs = pstmt.executeQuery();//select 실행
-			if(rs.next()) {
-				PHON item = new PHON();
-				item.setId(rs.getInt(1));
-				item.setCategory(rs.getString(2));
-				item.setProduct_name(rs.getString(3));
-				item.setBun(rs.getString(4));
-				item.setPicturl_url(rs.getString(5));
-				phon.add(item);
-			}
-		}catch(Exception e) {
-			System.out.println("교과목 변경용 검색 중 문제 발생!");
-		}finally {
-			try {
-				rs.close(); pstmt.close(); con.close();
-			}catch(Exception e) {}
-		}
-		//Forward
-		request.setAttribute("PHON", phon);
-		RequestDispatcher rd = request.getRequestDispatcher(
-				"listupdate.jsp");
-		rd.forward(request, response);
-	}
 }

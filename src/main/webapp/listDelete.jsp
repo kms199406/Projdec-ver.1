@@ -19,7 +19,7 @@
 </nav>
 <section>
 <%	PHON c = (PHON)request.getAttribute("PHON"); %>
-<form action="listUpdateDo.do" method="post" name="item" onsubmit="return check(this)">
+<form action="listDeleteDo.do" method="post" name="item" onsubmit="return check(this)">
 <input type="hidden" name="codeChecked">
 <table>
 	<tr><th>제품번호</th><td><input type="text" name="ID" value="<%=c.getId() %>" size="6"/>
@@ -43,7 +43,7 @@
 
 <script type="text/javascript">
 function check(frm){
-	if( ! confirm("정말로 수정하시겠습니까?")) return false;
+	if( ! confirm("정말로 삭제하시겠습니까?")) return false;
 }
 function codeCheck(){
 	var code = document.item.CODE.value;

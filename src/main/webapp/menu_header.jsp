@@ -17,7 +17,7 @@
 	String admin = (String)session.getAttribute("ADMIN"); %>
 
 <%	if(admin != null) { %>		
-		<td width="160"><a href="loginCheck.do">■ 제품 등록</a></td>
+		<td width="160"><a href="phoneEntry.jsp">■ 제품 등록</a></td>
 		<td width="280"><a href="noticeEntry.jsp">■ 소프트웨어 업데이트 쓰기</a></td>
 <%	} %>
 		<td width="280"><a href="noticeList.do">■ 소프트웨어 업데이트 보기</a></td>

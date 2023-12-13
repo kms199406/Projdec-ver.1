@@ -57,8 +57,8 @@ public class ListUpdateServlet extends HttpServlet {
 			pstmt = con.prepareStatement(update);
 			pstmt.setString(1, Category);
 			pstmt.setString(2, P_name);
-			pstmt.setString(3, Picture);
-			pstmt.setString(4, desc);
+			pstmt.setString(3, desc);
+			pstmt.setString(4, Picture);
 			pstmt.setString(5, Price);
 			pstmt.setString(6, Bun);
 			pstmt.setInt(7, Integer.parseInt(id));
